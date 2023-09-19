@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 
 const PORT = process.env.PORT || 3000;
 
-app.get('/bfhl', (request, response) => {
+app.get('/bhfl', (request, response) => {
     const status = {
         "operation": 1
     };
@@ -21,13 +21,19 @@ app.get('/bfhl', (request, response) => {
 let requestData;
 
 
-app.post('/bfhl', (req, res) => {
+app.post('/bhfl', (req, res) => {
     requestData = req.body.data;
 
     console.log(requestData);
 
-    const numbersData = requestData.filter((data)=>typeof(data)==="number")
-    const aplhabetData = requestData.filter((data)=>typeof(data)==="string")
+    const integerRegex = /^\d+$/;
+
+
+    const numbersData = requestData.filter((data)=>integerRegex.test(data))
+
+    const alphabeticStringRegex = /^[a-zA-Z]+$/;
+
+    const aplhabetData = requestData.filter((data)=>alphabeticStringRegex.test(data))
 
     const highestAlphabet = aplhabetData.reduce((highest, current) => (current > highest ? current : highest), 'A');
 
