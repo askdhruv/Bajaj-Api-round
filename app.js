@@ -8,8 +8,6 @@ const app = express ();
 app.use(bodyParser.json());
 
 
-const PORT = process.env.PORT || 3000;
-
 app.get('/bfhl', (request, response) => {
     const status = {
         "operation": 1
@@ -55,8 +53,12 @@ app.post('/bfhl', (req, res) => {
 
 
 
+let port = process.env.PORT;
+if(port == null || port == ""){
+  port = 10000;
+}
 
 
-app.listen(PORT, () => {
-    console.log(`Server running on port: ${PORT}`);
-  });
+app.listen(port, function() {
+  console.log("Server started successfully");
+});
