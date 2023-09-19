@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 
 const PORT = process.env.PORT || 3000;
 
-app.get('/bhfl', (request, response) => {
+app.get('/bfhl', (request, response) => {
     const status = {
         "operation": 1
     };
@@ -21,7 +21,7 @@ app.get('/bhfl', (request, response) => {
 let requestData;
 
 
-app.post('/bhfl', (req, res) => {
+app.post('/bfhl', (req, res) => {
     requestData = req.body.data;
 
     console.log(requestData);
