@@ -40,10 +40,10 @@ app.post('/bfhl', (req, res) => {
     const response = {
         is_sucess: true,
         user_id: 'dhruv_aggarwal_28022002',
-        college_email: 'dhruv.aggarwal2020@vitbhopal.ac.in',
-        college_roll_number: '20BCG10011',
-        number_array: numbersData,
-        alphabet_array: aplhabetData,
+        email: 'dhruv.aggarwal2020@vitbhopal.ac.in',
+        roll_number: '20BCG10011',
+        numbers: numbersData,
+        alphabets: aplhabetData,
         highest_alphabet: highest_alphabet,
       };
 
